@@ -6,6 +6,12 @@
     flex-direction: row;
     justify-content: space-between;
 
+    .show-this {
+      p {
+        color: rgb(83,163,83);
+      }
+    }
+
     .right-answers {
       p {
         color: rgb(83,163,83);

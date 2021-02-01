@@ -13,7 +13,13 @@ export class Game1logic {
 
   gameContent: InsideContent;
 
-  flag: number = 0;
+  correctAnswers: number = 0;
+
+  wrongAnswers: number = 0;
+
+  nextDificulty: boolean = false;
+
+  flag: number = 0; //to show a button for next difficulty
 
   image0 = new Images("carrot",'0');
   image1 = new Images("strawberry",'1');
@@ -23,7 +29,7 @@ export class Game1logic {
   image5 = new Images("laptop",'5');
   image6 = new Images("buffet",'6');
   image7 = new Images("carpet",'7');
-  image8 = new Images("folder",'8');
+  image8 = new Images("building",'8');
 
 
   allImages: Array<Images> = [this.image6, this.image1, this.image3,this.image8, this.image0, this.image7, this.image2, this.image5, this.image4];
@@ -51,9 +57,6 @@ export class Game1logic {
 
   setField(position: number, value: number): void{
     this.gameField[position] = value;
-    console.log(this.gameField);
-
-
 
   }
 
@@ -63,9 +66,6 @@ export class Game1logic {
     return colorClass;
   }
 
-  changePlayer(): void {
-    this.currentTurn = (this.currentTurn === 2) ? 1 : 2;
-  }
 
   async checkGameEndWinner(): Promise<boolean> {
     let isWinner = false;
