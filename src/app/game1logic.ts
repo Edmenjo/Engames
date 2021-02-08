@@ -43,28 +43,12 @@ export class Game1logic {
 
   gameStart(): void {
     this.gameField = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-    this.currentTurn = this.randomPlayerStart();
-    console.log(this.currentTurn);
     this.gameStatus = Status.START;
 
 
   }
 
-  randomPlayerStart(): number {
-    const startPlayer = Math.floor(Math.random() * 2) + 1;
-    return startPlayer;
-  }
 
-  setField(position: number, value: number): void{
-    this.gameField[position] = value;
-
-  }
-
-
-  setPlayerColorClass(): string {
-    const colorClass = (this.currentTurn === 2) ? 'wrong-answers' : 'right-answers';
-    return colorClass;
-  }
 
 
   async checkGameEndWinner(): Promise<boolean> {

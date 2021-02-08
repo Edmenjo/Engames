@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game1logic } from '../game1logic';
 import { Routes, RouterModule } from '@angular/router';
 import { Images } from '../images';
+import { Status } from '../game1status';
 
 
 @Component({
@@ -34,10 +35,6 @@ export class Game1Component implements OnInit {
     if(this.game.gameStatus === 1) {
       const position = subfield.currentTarget.getAttribute('position');
       const information = document.querySelector('.current-status');
-
-      this.game.setField(position, this.game.currentTurn);
-      const color = this.game.setPlayerColorClass();
-      subfield.currentTarget.classList.add(color);
 
 
 

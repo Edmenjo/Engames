@@ -11,12 +11,15 @@ import { MenuComponent } from './menu/menu.component';
 import { Game1Component } from './game1/game1.component';
 
 import {MatButtonModule} from '@angular/material/button';
+import { Page2Component } from './game1/page2/page2.component';
+import { Game1logic } from './game1logic';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    Game1Component
+    Game1Component,
+    Page2Component
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import {MatButtonModule} from '@angular/material/button';
     FlexLayoutModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [Game1logic],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
