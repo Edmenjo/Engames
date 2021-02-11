@@ -3,6 +3,7 @@ import { Game1logic } from '../game1logic';
 import { Routes, RouterModule } from '@angular/router';
 import { Images } from '../images';
 import { Status } from '../game1status';
+import imagesData from './data/images.json';
 
 
 @Component({
@@ -14,7 +15,9 @@ import { Status } from '../game1status';
 export class Game1Component implements OnInit {
 
 
-
+  Images: any = imagesData;
+  image: any;
+  whatImage: number = 0;
 
   constructor(public game: Game1logic) { }
 
@@ -24,8 +27,10 @@ export class Game1Component implements OnInit {
   startGame(): void{
     this.game.gameStart();
     const information = document.querySelector('.current-status');
+    this.image = imagesData;
+    this.whatImage = this.game.randomImage();//what image to start with
     if(information != null){
-      information.innerHTML = this.game.allImages[0].name;
+      information.innerHTML = this.image[this.whatImage].name;
     }
 
 
@@ -33,13 +38,13 @@ export class Game1Component implements OnInit {
 
   async clickSubfield (subfield: any): Promise<void> {
     if(this.game.gameStatus === 1) {
-      const position = subfield.currentTarget.getAttribute('position');
+      const pictureName = subfield.currentTarget.getAttribute('id');
+
+
       const information = document.querySelector('.current-status');
 
 
-
-
-      if(this.game.allImages[this.game.flag].position === position){
+      if(this.image[this.whatImage].name === pictureName){//si coincide el nombre con el del campo clickado
         subfield.currentTarget.classList.add('right-answer');
         this.game.correctAnswers++;
       } else {
@@ -49,7 +54,7 @@ export class Game1Component implements OnInit {
 
 
 
-      if(this.game.flag === 7){
+      if(this.game.flag === 7){//for showing next diffculty
         this.game.nextDificulty = true;
       }
 
@@ -73,10 +78,13 @@ export class Game1Component implements OnInit {
       });
 
       if (this.game.gameStatus === 1 ){
-        this.game.flag++;
-        const currentImage = this.game.allImages[this.game.flag].name;
+        this.game.flag++;//for next difficulty
+        this.whatImage++;//+1 to the index
+        if(this.whatImage > 8){//if its over the possible index
+          this.whatImage -= 9;//-9 to start over
+        }
         if(information != null){
-          information.innerHTML = currentImage;
+          information.innerHTML = this.image[this.whatImage].name;//showing next name
         }
       }
     }

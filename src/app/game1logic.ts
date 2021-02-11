@@ -19,7 +19,10 @@ export class Game1logic {
 
   nextDificulty: boolean = false;
 
-  flag: number = 0; //to show a button for next difficulty
+  flag: number = 1; //to show a button for next difficulty
+
+  rest: number = 0;
+  restCopy: number = 0;
 
   image0 = new Images("carrot",'0');
   image1 = new Images("strawberry",'1');
@@ -48,9 +51,6 @@ export class Game1logic {
 
   }
 
-
-
-
   async checkGameEndWinner(): Promise<boolean> {
     let isWinner = false;
 
@@ -77,6 +77,13 @@ export class Game1logic {
     } else {
       return false;
     }
+  }
+
+  randomImage(): number { //random number generator from 0 to 8
+    this.rest = Math.random();
+    this.restCopy = this.rest;
+    this.restCopy = this.restCopy * 10 % 1;
+    return ((this.rest * 10) - this.restCopy) - 1;
   }
 
   gameEnd(): void {

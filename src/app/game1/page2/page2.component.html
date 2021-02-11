@@ -12,25 +12,18 @@
   <div *ngIf="this.game.gameStatus === 1" class="gameboard">
 
 
-    <div class="gamefield container-fluid">
-      <div class="row">
-        <div (click)="clickSubfield($event)" position="0" class="subfield col-4"></div>
-        <div (click)="clickSubfield($event)" position="1" class="subfield col-4"> <img src="assets/images/strawberry.jpg" width="98" height="94"/> </div>
-        <div (click)="clickSubfield($event)" position="2" class="subfield col-4"></div>
-      </div>
-      <div class="row">
-        <div (click)="clickSubfield($event)" position="3" class="subfield col-4"></div>
-        <div (click)="clickSubfield($event)" position="4" class="subfield col-4"></div>
-        <div (click)="clickSubfield($event)" position="5" class="subfield col-4"></div>
-      </div>
-      <div class="row">
-        <div (click)="clickSubfield($event)" position="6" class="subfield col-4"> <img src="assets/images/buffet.png" width="98" height="94"/> </div>
-        <div (click)="clickSubfield($event)" position="7" class="subfield col-4"></div>
-        <div (click)="clickSubfield($event)" position="8" class="subfield col-4"></div>
+    <div >
+        <div (click)="clickSubfield($event)" id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
+
       </div>
 
     </div>
 
+    <div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word1}}</div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word2}}</div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word3}}</div>
+    </div>
 
 
   </div>

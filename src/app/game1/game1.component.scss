@@ -24,6 +24,8 @@
       }
     }
 
+
+
     .gamefield {
       max-width: 300px;
       .subfield {
@@ -42,5 +44,30 @@
 
       }
     }
+  }
+  .wordSquare {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 30px;
+    width: 90px;
+    border: 1px solid #000;
+    padding: 0px;
+  }
+
+  .wordSquareForCategory {
+    position: relative
+  }
+
+  .wordSquareForCategory2 {
+    position: absolute;
+    left: 500px;
+  }
+
+  .verticalLine {
+    margin: auto;
+    height: 90px;
+    width: 2px;
+    border: 1px solid #000;
   }
 }

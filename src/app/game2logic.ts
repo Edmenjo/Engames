@@ -50,6 +50,7 @@ export class Game2logic {
   }
 
 
+
 //sort alphabetically
 
   orderWords(): void {//sort by length of the words
@@ -61,9 +62,7 @@ export class Game2logic {
           this.currentTurn = i;
         }
         if(i === this.originalOrder.length-1){//cuando ya lo hemos recorrido entero
-          console.log(this.originalOrder);
           this.originalOrder[this.currentTurn] = "a";
-          console.log(this.originalOrder + "POST CAMBIO A LA A");
         }
       }
       this.correctOrder[j] = this.actualWord;//lo copiamos
