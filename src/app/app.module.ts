@@ -14,6 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { Page2Component } from './game1/page2/page2.component';
 import { Game1logic } from './game1logic';
 
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { Game1logic } from './game1logic';
     MatToolbarModule,
     FlexLayoutModule,
     MatButtonModule,
+    DragDropModule
   ],
   providers: [Game1logic],
   bootstrap: [AppComponent]

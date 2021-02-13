@@ -4,9 +4,48 @@
     <p class="current-status mat-display-1" style="color: #000">Press to start</p>
   </div>
 
+
+
   <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
     <button (click)="startGame()" mat-raised-button color="accent" class="start-game">START</button>
 
+  </div>
+
+    <div class="list-container">
+    <div class="todo-container column-container">
+      <div class="list"
+
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todos"
+        [cdkDropListConnectedTo]="doneList"
+        (cdkDropListDropped)="onDrop($event)">
+
+        <h2>Tech to learn</h2>
+        <div *ngFor="let todo of todos" cdkDrag>
+
+            <title>{{todo.name}}</title>
+            <h1>{{todo.category}}</h1>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="done-container column-container">
+      <div class="list"
+        cdkDropList
+       #doneList="cdkDropList"
+       [cdkDropListData]="completed"
+       [cdkDropListConnectedTo]="todoList"
+       (cdkDropListDropped)="onDrop($event)">
+
+        <h2>Tech learned</h2>
+        <div *ngFor="let complete of completed" cdkDrag>
+            <title>{{complete.name}}</title>
+            <h1>{{complete.category}}</h1>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div *ngIf="this.game.gameStatus === 1" class="gameboard">
@@ -17,12 +56,15 @@
     <div >
       <div class="gamefield container-fluid">
         <div *ngFor="let number of [1]" class="row">
-          <div *ngFor="let image of Images" (click)="clickSubfield($event)" id={{image.name}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
+          <div *ngFor="let image of Images" (click)="clickSubfield($event)" id={{image.name}} class="subfield col-16" cdkDrag> <img src={{image.src}} width="98" height="94"/>
             <p>{{image.name}}</p>
           </div>
 
         </div>
 
+      </div>
+      <div class="dropPlace" cdkDrag>
+        <p>blablabla</p>
       </div>
   </div>
     <div class="players wrong-answers align-self-center">
