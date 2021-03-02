@@ -3,21 +3,23 @@ import { Game2logic } from 'src/app/game2logic';
 import { Status } from 'src/app/game1status';
 import imagesData from '../data/images.json';
 import wordsToChoose from '../data/words.json';
+import lateralGame from '../data/lateralButtons.json';
 
 @Component({
   selector: 'app-game1',
   templateUrl: '../page2/page2.component.html',
+  //templateUrl: '../pages/page3/page3.component.html',
   styleUrls: ['../game1.component.scss'],
   providers: [Game2logic]
 })
 
 export class Page2Component {
 
-  Images: any = imagesData;
-  Words: any = wordsToChoose;
-
   image: any;
+  imageForButton: any;
   whatImage: number = 0;
+  whatImageForButton: number = 0;
+
   whatWoords: number = 0;
   word1: string = '';
   word2: any;
@@ -31,25 +33,29 @@ export class Page2Component {
     this.game.gameStart();
     console.log(this.game.correctOrder);
     this.image = imagesData[this.whatImage];
+    this.imageForButton = imagesData[this.whatImageForButton];
 
     this.word1 = wordsToChoose[this.whatWoords].name;
     this.word2 = wordsToChoose[this.whatWoords+1].name;
     this.word3 = wordsToChoose[this.whatWoords+2].name;
+
+
   }
+
+  //almost working
 
 
   async clickSubfield (subfield: any): Promise<void> {
+    const pressedButton = subfield.currentTarget;
     if(this.game.gameStatus === 1) {
       const position = subfield.currentTarget.getAttribute('position');
       const information = document.querySelector('.current-status');
 
       if(this.image.name === this.whichAnswer()){//checking the right answer
-        subfield.currentTarget.classList.add('right-answer');
-        //this.game.correctAnswers++;
+        pressedButton.classList.add('right-answer');
         console.log("YAY");
       } else {
-        subfield.currentTarget.classList.add('wrong-answer');
-        //this.game.wrongAnswers++;
+        pressedButton.classList.add('wrong-answer');
         console.log("NOPE");
       }
 
@@ -59,12 +65,15 @@ export class Page2Component {
         this.game.nextDificulty = true;
       }
 
+      if(this.game.flag === 9){
+        this.game.nextDificulty = false;
+      }
 
-      if (this.game.gameStatus === 1 ){
+      if (this.game.gameStatus === 1 && this.game.nextDificulty === false){
         this.game.flag++;
         const currentImage = this.game.allImages[this.game.flag].name;
         if(information != null){
-          information.innerHTML = currentImage;
+          information.innerHTML = this.image.name;
         }
       }
 
@@ -78,6 +87,9 @@ export class Page2Component {
       this.word2 = wordsToChoose[this.whatWoords+1].name;
       this.word3 = wordsToChoose[this.whatWoords+2].name;
 
+      setTimeout(()=>{
+        pressedButton.classList.add('backAtIT');
+      },700)
     }
 
 
@@ -91,6 +103,7 @@ export class Page2Component {
     } else if (this.image.name === this.word3){
       return this.word3;
     } else {
+      console.log("LA RESPUESTA NO ESTA ENTER LAS CORRECTAS");
       return "ERROR, La respuesta no esta entre las opciones";
     }
   }

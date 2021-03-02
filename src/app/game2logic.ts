@@ -19,6 +19,8 @@ export class Game2logic {
 
   nextDificulty: boolean = false;
 
+  hasAnImage: boolean = true;
+
   flag: number = 0; //to show a button for next difficulty
 
   image0 = new Images("carrot",'0');

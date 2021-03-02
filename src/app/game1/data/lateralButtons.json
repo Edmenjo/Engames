@@ -1,0 +1,53 @@
+[{
+  "id": 1,
+  "name": "Strawberry",
+  "left": "Fruit",
+  "right": "Vegetable",
+  "trueOne": "Fruit",
+  "src": "assets/images/strawberry.jpg",
+  "image": "true"
+},
+{
+  "id": 2,
+  "name": "Wood",
+  "left": "Animal",
+  "right": "Not an animal",
+  "trueOne": "Not an animal",
+  "image": "false"
+},
+{
+  "id": 3,
+  "name": "Roof",
+  "left": "Roof",
+  "right": "Wood",
+  "trueOne": "Roof",
+  "src": "assets/images/roof.jpg",
+  "image": "true"
+},
+{
+  "id": 4,
+  "name": "Wood",
+  "left": "Roof",
+  "right": "Wood",
+  "trueOne": "Wood",
+  "src": "assets/images/wood.jpg",
+  "image": "true"
+},
+{
+  "id": 5,
+  "name": "Donut",
+  "left": "Roof",
+  "right": "Wood",
+  "trueOne": "Fruit",
+  "image": "false"
+},
+{
+  "id": 6,
+  "name": "Roof",
+  "left": "Roof",
+  "right": "Wood",
+  "trueOne": "Fruit",
+  "src": "assets/images/wood.jpg",
+  "image": "true"
+}
+]

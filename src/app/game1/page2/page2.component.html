@@ -1,5 +1,5 @@
 <div class="main-container">
-  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">REORDER</h1>
+  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">CHOOSE IT!</h1>
   <div class="field">
     <p class="current-status mat-display-1" style="color: #000">Press to start</p>
   </div>
@@ -9,13 +9,9 @@
 
   </div>
 
-  <div *ngIf="this.game.gameStatus === 1" class="gameboard">
+  <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
 
-
-    <div >
-        <div (click)="clickSubfield($event)" id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
-
-      </div>
+        <div id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
 
     </div>
 
@@ -27,5 +23,7 @@
 
 
   </div>
+
+
 
 </div>

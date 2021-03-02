@@ -1,0 +1,28 @@
+<div class="main-container">
+  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">YOUR ADVENTURE MAP</h1>
+  <div class="field">
+  </div>
+
+  <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
+    <button (click)="startGame()" mat-raised-button color="accent" class="start-game">ENTER ADVENTURE</button>
+
+  </div>
+
+  <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
+
+        <div id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
+
+    </div>
+
+    <div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word1}}</div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word2}}</div>
+      <div class="wordSquare" (click)="clickSubfield($event)">{{word3}}</div>
+    </div>
+
+
+  </div>
+
+
+
+</div>

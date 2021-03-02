@@ -1,16 +1,21 @@
 <div class="main-container">
-  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">DRAG AND DROP</h1>
+  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">LATERAL BUTTONS</h1>
   <div class="field">
-    <p class="current-status mat-display-1" style="color: #000">Press to start</p>
   </div>
 
-
-    <div class="verticalLine">
-    </div>
-
+  <div class="imgAndWord" *ngIf="this.game.hasAnImage === true">
+    <img src={{src}} width="98" height="94"/>
+  </div>
+  <div class="imgAndWord" *ngIf="this.game.hasAnImage === false">
+    <h2>{{realName}}</h2>
+  </div>
     <div>
-      <div class="wordSquareForCategory">PALABRA1</div>
-      <div class="wordSquareForCategory2">Palabra2</div>
+      <div class="squareForCategory">
+        <button (click)="lateralButtons($event)" mat-raised-button color="accent" id="left" class="bigButtonLeft">{{leftValue}}</button>
+      </div>
+      <div class="squareForCategory2">
+        <button (click)="lateralButtons($event)" mat-raised-button color="accent" id="right" class="bigButtonRight">{{rightValue}}</button>
+      </div>
     </div>
 
 </div>

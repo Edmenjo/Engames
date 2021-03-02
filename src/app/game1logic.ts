@@ -3,8 +3,6 @@ import { Status } from './game1status';
 import { InsideContent } from './game1content';
 import { Images } from './images'
 
-import { DragDropModule} from '@angular/cdk/drag-drop';
-
 export class Game1logic {
 
   gameField: Array<number> = [];

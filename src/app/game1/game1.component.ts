@@ -4,10 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { Images } from '../images';
 import { Status } from '../game1status';
 import imagesData from './data/images.json';
-import wordsData from './data/words.json';
-
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -18,48 +14,9 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class Game1Component implements OnInit {
 
-  Words: any = wordsData;
   Images: any = imagesData;
   image: any;
   whatImage: number = 0;
-
-  todos = [
-    {
-      name: 'Angular',
-      category: 'Web Development'
-    },
-    {
-      name: 'Flexbox',
-      category: 'Web Development'
-    },
-    {
-      name: 'iOS',
-      category: 'App Development'
-    },
-    {
-      name: 'Java',
-      category: 'Software development'
-    }
-  ];
-
-  completed = [
-    {
-      name: 'Android',
-      category: 'Mobile Development'
-    },
-    {
-      name: 'MongoDB',
-      category: 'Databases'
-    },
-    {
-      name: 'ARKit',
-      category: 'Augmented Reality'
-    },
-    {
-      name: 'React',
-      category: 'Web Development'
-    }
-  ];
 
   constructor(public game: Game1logic) { }
 
@@ -76,19 +33,6 @@ export class Game1Component implements OnInit {
     }
 
 
-  }
-
-
-  onDrop(event: CdkDragDrop<any[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex, event.currentIndex);
-    }
   }
 
   async clickSubfield (subfield: any): Promise<void> {
