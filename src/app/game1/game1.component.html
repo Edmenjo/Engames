@@ -1,10 +1,5 @@
 <div class="main-container">
-  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">ORIGINAL</h1>
-  <div class="field">
-    <p class="current-status mat-display-1" style="color: #000">Press to start</p>
-  </div>
-
-
+  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">THE GRID</h1>
 
   <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
     <button (click)="startGame()" mat-raised-button color="accent" class="start-game">START</button>
@@ -12,39 +7,39 @@
   </div>
 
 
-  <div *ngIf="this.game.gameStatus === 1" class="gameboard">
+
+
+  <div *ngIf="this.game.gameStatus === 1 " class="gameboard">
+
+    <div class="justify-content-center">
+      <h2>{{image.name}}</h2>
+    </div>
 
     <div class="players right-answers align-self-center">
       <p class="mat-body-1" style="font-weight: 700; margin: 0 0 10px 0;">Correct answers: {{this.game.correctAnswers}}</p>
     </div>
-    <div >
+
       <div class="gamefield container-fluid">
         <div *ngFor="let number of [1]" class="row">
-          <div *ngFor="let image of Images" (click)="clickSubfield($event)" id={{image.name}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
-          </div>
+          <div *ngFor="let imagee of Images" (click)="clickSubfield($event)" id={{imagee.name}} class="subfield col-16"> <img src={{imagee.src}} width="98" height="94"/></div>
         </div>
+      </div>
+
+      <div class="players wrong-answers align-self-center">
+        <p class="mat-body-1" style="font-weight: 700; margin: 0 0 10px 0;">Wrong Answers: {{this.game.wrongAnswers}}</p>
+
       </div>
   </div>
 
-    <div class="players wrong-answers align-self-center">
-      <p class="mat-body-1" style="font-weight: 700; margin: 0 0 10px 0;">Wrong Answers: {{this.game.wrongAnswers}}</p>
 
-    </div>
+
 
     <div *ngIf="this.game.nextDificulty === true" class="show-this">
       <p>This is for showing a button to go for next dificulty</p>
-      <button (click)="startGame()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Take me there!</button>
+      <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to adventure</button>
+      <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>
     </div>
 
 
-
-
-
-
-
-    <router-outlet></router-outlet>
-
-
-  </div>
 
 </div>

@@ -3,26 +3,25 @@
   <div class="field">
   </div>
 
-  <div *ngIf="this.game.gameStatus === 0" class="field d-flex justify-content-center" style="width: 100%;">
-    <button (click)="startGame()" mat-raised-button color="accent" class="start-game">ENTER ADVENTURE</button>
+  <div class="field d-flex justify-content-center" style="width: 100%;">
+    <a class="firstGame" routerLink="/game1">THE GRID</a>
 
   </div>
 
-  <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
+  <div class="field d-flex justify-content-center" style="width: 100%;">
+    <button *ngIf="this.game.gameOneCompleted === true" (click)="goToGame()" routerLink="/game2" mat-raised-button color="accent" class="start-game">CHOOSE IT!</button>
+  </div>
 
-        <div id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
+  <div *ngIf="this.game.text1 === true">
+    <p>{{adventureTextVar[0].text}}</p>
+    <button (click)="dialogMove($event)" id="1">next</button>
+  </div>
 
-    </div>
-
-    <div>
-      <div class="wordSquare" (click)="clickSubfield($event)">{{word1}}</div>
-      <div class="wordSquare" (click)="clickSubfield($event)">{{word2}}</div>
-      <div class="wordSquare" (click)="clickSubfield($event)">{{word3}}</div>
-    </div>
-
-
+  <div *ngIf="this.game.text2 === true" (click)="dialogMove($event)" id="2">
+    <p>{{adventureTextVar[1].text}}</p>
   </div>
 
 
+  <router-outlet></router-outlet>
 
 </div>

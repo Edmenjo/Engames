@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Game2logic } from 'src/app/game2logic';
+import { Status } from 'src/app/game1status';
 import imagesData from '../../data/images.json';
 import wordsToChoose from '../../data/words.json';
 import lateralGame from '../../data/lateralButtons.json';
@@ -12,6 +13,9 @@ import lateralGame from '../../data/lateralButtons.json';
 })
 
 export class Page3Component {
+
+  flag: number = 0;
+  accessHardMode: boolean = false;
 
   lateralButtonsFlag: number = 0;//next answer in lateral bottons
   leftValue: any;
@@ -29,6 +33,15 @@ export class Page3Component {
     this.src = lateralGame[this.lateralButtonsFlag].src;
     this.hasImage = lateralGame[this.lateralButtonsFlag].image;
 
+  }
+
+  startGame(): void{
+    this.game.gameStatus = Status.START;
+    this.game.gameStart();
+  }
+
+  playHardMode(){
+    this.accessHardMode = true;
   }
 
   lateralButtons(lateralButton: any): void {
@@ -59,6 +72,10 @@ export class Page3Component {
       this.game.hasAnImage = true;
     } else {
       this.game.hasAnImage = false;
+    }
+    this.flag++;
+    if(this.flag === 3){//for showing next diffculty
+      this.game.nextDificulty = true;
     }
   }
 }

@@ -15,6 +15,8 @@ import { Page2Component } from './game1/page2/page2.component';
 import { Game1logic } from './game1logic';
 
 import { Page3Component } from './game1/pages/page3/page3.component';
+import { AdventureComponent } from './game1/pages/adventure/adventure.component';
+import { SideBarComponent } from './game1/pages/side-bar/side-bar/side-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { Page3Component } from './game1/pages/page3/page3.component';
     MenuComponent,
     Game1Component,
     Page2Component,
-    Page3Component
+    Page3Component,
+    AdventureComponent,
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,

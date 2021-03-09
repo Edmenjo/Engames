@@ -15,6 +15,9 @@ import lateralGame from '../data/lateralButtons.json';
 
 export class Page2Component {
 
+  flag: number = 0;
+  accessHardMode: boolean = false;
+
   image: any;
   imageForButton: any;
   whatImage: number = 0;
@@ -42,7 +45,9 @@ export class Page2Component {
 
   }
 
-  //almost working
+  playHardMode(){
+    this.accessHardMode = true;
+  }
 
 
   async clickSubfield (subfield: any): Promise<void> {
@@ -61,21 +66,18 @@ export class Page2Component {
 
 
 
-      if(this.game.flag === 7){
-        this.game.nextDificulty = true;
-      }
-
-      if(this.game.flag === 9){
-        this.game.nextDificulty = false;
-      }
-
       if (this.game.gameStatus === 1 && this.game.nextDificulty === false){
-        this.game.flag++;
-        const currentImage = this.game.allImages[this.game.flag].name;
+        this.flag++;
+        const currentImage = this.game.allImages[this.flag].name;
         if(information != null){
           information.innerHTML = this.image.name;
         }
       }
+
+      if(this.flag === 8){//for showing next diffculty
+        this.game.nextDificulty = true;
+      }
+
 
       //moving to next image and words
       this.whatImage++;

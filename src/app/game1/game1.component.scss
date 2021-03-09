@@ -1,4 +1,10 @@
 .main-container {
+  .a:link {
+    transition: all .5s linear 0;
+    color: hsl(36,50%,50%);
+  }
+
+
   .gameboard {
     margin-top: 30px;
     color: rgba(0, 0, 0, 0.212);
@@ -71,18 +77,21 @@
 
 
     .bigButtonLeft {
+      transition: all .5s linear 0;
       bottom: 10px;
       left: 50px;
       height: 350px;
       width: 350px;
-      &.right-answer {
-        background: rgb(83,163,83);
-      }
-      &.wrong-answer {
-        background: rgb(230,109,109);
-      }
-      &.backAtIT {
-        background: #69F0AE;
+      .bigButtonLeft:active{
+       &.right-answer {
+          background: rgb(83,163,83);
+        }
+        &.wrong-answer {
+          background: rgb(230,109,109);
+        }
+        &.backAtIT {
+          background: #69F0AE;
+        }
       }
     }
   }
@@ -120,5 +129,20 @@
   .reorderBox {
     height: 800px;
     width: 1000px;
+  }
+
+  .firstGame {
+    text-align: center;
+
+    border-radius: 7%;
+    height: 80px;
+    width: 200px;
+    background-image: url('../../assets/images/buffet.png');
+    transition: 0.5s;
+  }
+
+  .firstGame:hover {
+    height: 90px;
+    width: 220px;
   }
 }

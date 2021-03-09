@@ -18,5 +18,10 @@
       </div>
     </div>
 
+    <div *ngIf="this.game.nextDificulty === true" class="show-this">
+      <p>This is for showing a button to go for next dificulty</p>
+      <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to adventure</button>
+      <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>
+    </div>
 </div>
 
