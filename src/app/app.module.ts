@@ -11,24 +11,24 @@ import { MenuComponent } from './menu/menu.component';
 import { Game1Component } from './game1/game1.component';
 
 import {MatButtonModule} from '@angular/material/button';
-import { Page2Component } from './game1/page2/page2.component';
 import { Game1logic } from './game1logic';
 
 import { AdventureComponent } from './game1/pages/adventure/adventure.component';
 import { SideNavComponent } from './game1/pages/side-nav/side-nav.component';
 import { SideNavContentComponent } from './game1/pages/side-nav-content/side-nav-content.component';
 import { LateralButtonsComponent } from './game1/pages/lateral-buttons/lateral-buttons.component';
+import { ChooseItComponent } from './game1/pages/choose-it/choose-it.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     Game1Component,
-    Page2Component,
     AdventureComponent,
     SideNavComponent,
     SideNavContentComponent,
     LateralButtonsComponent,
+    ChooseItComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+.wordSquare {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  height: 30px;
+  width: 90px;
+  border: 1px solid #000;
+  padding: 0px;
+  &.right-answer {
+    background: rgb(83,163,83);
+  }
+  &.wrong-answer {
+    background: rgb(230,109,109);
+  }
+  &.backAtIT {
+    background: #ffffff;
+  }
+}
