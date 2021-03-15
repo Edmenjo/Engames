@@ -3,18 +3,20 @@ import { Game1logic } from '../../../game1logic';
 import { Routes, RouterModule } from '@angular/router';
 import imagesData from './data/images.json';
 import adventureText from '../../data/adventureText.json';
+import { SideNavDirection } from '../side-nav/side-nav-direction';
 
 
 @Component({
   selector: 'app-game1',
   templateUrl: './adventure.component.html',
-  styleUrls: ['../../game1.component.scss'],
+  styleUrls: ['./adventure.component.scss'],
   providers: [Game1logic]
 })
 export class AdventureComponent implements OnInit {
 
   adventureTextVar: any = adventureText;
 
+  sideNavDirect: SideNavDirection;
 
   constructor(public game: Game1logic) { }
 

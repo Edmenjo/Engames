@@ -7,12 +7,12 @@ import lateralGame from '../../data/lateralButtons.json';
 
 @Component({
   selector: 'app-game1',
-  templateUrl: './page3.component.html',
-  styleUrls: ['../../game1.component.scss'],
+  templateUrl: './lateral-buttons.component.html',
+  styleUrls: ['./lateral-buttons.component.scss'],
   providers: [Game2logic]
 })
 
-export class Page3Component {
+export class LateralButtonsComponent {
 
   flag: number = 0;
   accessHardMode: boolean = false;
@@ -47,17 +47,25 @@ export class Page3Component {
   lateralButtons(lateralButton: any): void {
     const information2 = document.querySelector('.current-status');
     const pressedButton = lateralButton.currentTarget;
+    console.log(pressedButton.classList);
+
     if(pressedButton.getAttribute('id') === 'left' && this.leftValue === lateralGame[this.lateralButtonsFlag].trueOne){
       pressedButton.classList.add('right-answer');
+      setTimeout(()=>{
+        pressedButton.classList.remove('right-answer');
+      },700)
     } else if(pressedButton.getAttribute('id') === 'right' && this.rightValue === lateralGame[this.lateralButtonsFlag].trueOne){
       pressedButton.classList.add('right-answer');
+      setTimeout(()=>{
+        pressedButton.classList.remove('right-answer');
+      },700)
     } else {
       pressedButton.classList.add('wrong-answer');
+      setTimeout(()=>{
+        pressedButton.classList.remove('wrong-answer');
+      },700)
     }
 
-    setTimeout(()=>{
-      pressedButton.classList.add('backAtIT');
-    },700)
     //moving to next question
     this.lateralButtonsFlag++;
 

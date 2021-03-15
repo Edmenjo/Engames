@@ -3,24 +3,50 @@
   <div class="field">
   </div>
 
-  <div class="field d-flex justify-content-center" style="width: 100%;">
-    <a class="firstGame" routerLink="/game1">THE GRID</a>
+  <app-side-nav
+  [sidenavTemplateRef]="navContent"
+  [direction]="'left'"
+  [navWidth]="280"
+  [duration]="0.5"></app-side-nav>
+  <h1>TUCULITO.MP3</h1>
+
+<div class="main-container">
+  <app-side-nav></app-side-nav>
+  <section>
+  </section>
+</div>
+
+<ng-template #navContent>
+  <h1>JEJEJEJEJEJ</h1>
+</ng-template>
+
+  <div class="adventureHorizontalDisplay">
+    <div class="adventureDisplay">
+      <div class="field d-flex justify-content-center" style="width: 100%;">
+        <a class="firstGame" routerLink="/game1">THE GRID</a>
+      </div>
+
+      <div *ngIf="this.game.gameOneCompleted === true" class="field d-flex justify-content-center" style="width: 100%;">
+        <a class="secondGame" routerLink="/game2">CHOOSE IT!</a>
+      </div>
+
+
+      <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
+        <a class="dialog" (click)="dialogMove($event)" id="1">{{adventureTextVar[0].text}}</a>
+      </div>
+
+      <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
+        <a class="dialog" (click)="dialogMove($event)" id="2">{{adventureTextVar[1].text}}</a>
+      </div>
+
+      <div *ngIf="this.game.text2 === true" (click)="dialogMove($event)" id="2">
+        <p>{{adventureTextVar[1].text}}</p>
+        <button (click)="dialogMove($event)" id="2">next</button>
+      </div>
+
+    </div>
 
   </div>
-
-  <div class="field d-flex justify-content-center" style="width: 100%;">
-    <button *ngIf="this.game.gameOneCompleted === true" (click)="goToGame()" routerLink="/game2" mat-raised-button color="accent" class="start-game">CHOOSE IT!</button>
-  </div>
-
-  <div *ngIf="this.game.text1 === true">
-    <p>{{adventureTextVar[0].text}}</p>
-    <button (click)="dialogMove($event)" id="1">next</button>
-  </div>
-
-  <div *ngIf="this.game.text2 === true" (click)="dialogMove($event)" id="2">
-    <p>{{adventureTextVar[1].text}}</p>
-  </div>
-
 
   <router-outlet></router-outlet>
 

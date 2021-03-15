@@ -8,7 +8,6 @@ import lateralGame from '../data/lateralButtons.json';
 @Component({
   selector: 'app-game1',
   templateUrl: '../page2/page2.component.html',
-  //templateUrl: '../pages/page3/page3.component.html',
   styleUrls: ['../game1.component.scss'],
   providers: [Game2logic]
 })
@@ -24,9 +23,11 @@ export class Page2Component {
   whatImageForButton: number = 0;
 
   whatWoords: number = 0;
-  word1: string = '';
+  word1: any;
   word2: any;
   word3: any;
+
+  buttonID: any;
 
   constructor(public game: Game2logic) { }
 
@@ -38,9 +39,10 @@ export class Page2Component {
     this.image = imagesData[this.whatImage];
     this.imageForButton = imagesData[this.whatImageForButton];
 
-    this.word1 = wordsToChoose[this.whatWoords].name;
-    this.word2 = wordsToChoose[this.whatWoords+1].name;
-    this.word3 = wordsToChoose[this.whatWoords+2].name;
+    this.whatWoords = 0;
+    this.word1 = wordsToChoose[this.whatWoords];
+    this.word2 = wordsToChoose[this.whatWoords+1];
+    this.word3 = wordsToChoose[this.whatWoords+2];
 
 
   }
@@ -53,26 +55,23 @@ export class Page2Component {
   async clickSubfield (subfield: any): Promise<void> {
     const pressedButton = subfield.currentTarget;
     if(this.game.gameStatus === 1) {
-      const position = subfield.currentTarget.getAttribute('position');
-      const information = document.querySelector('.current-status');
+      this.buttonID = pressedButton.getAttribute('id');
 
-      if(this.image.name === this.whichAnswer()){//checking the right answer
+
+      console.log(this.whichAnswer(pressedButton),this.image.name);
+
+      if(this.whichAnswer(pressedButton)){//checking the right answer
         pressedButton.classList.add('right-answer');
-        console.log("YAY");
+        setTimeout(()=>{
+        pressedButton.classList.remove('right-answer');
+      },700)
       } else {
         pressedButton.classList.add('wrong-answer');
-        console.log("NOPE");
+        setTimeout(()=>{
+          pressedButton.classList.remove('wrong-answer');
+        },700)
       }
 
-
-
-      if (this.game.gameStatus === 1 && this.game.nextDificulty === false){
-        this.flag++;
-        const currentImage = this.game.allImages[this.flag].name;
-        if(information != null){
-          information.innerHTML = this.image.name;
-        }
-      }
 
       if(this.flag === 8){//for showing next diffculty
         this.game.nextDificulty = true;
@@ -85,28 +84,30 @@ export class Page2Component {
 
       //for showing next image and words
       this.image = imagesData[this.whatImage];
-      this.word1 = wordsToChoose[this.whatWoords].name;
-      this.word2 = wordsToChoose[this.whatWoords+1].name;
-      this.word3 = wordsToChoose[this.whatWoords+2].name;
+      this.word1 = wordsToChoose[this.whatWoords];
+      this.word2 = wordsToChoose[this.whatWoords+1];
+      this.word3 = wordsToChoose[this.whatWoords+2];
 
-      setTimeout(()=>{
-        pressedButton.classList.add('backAtIT');
-      },700)
     }
+
 
 
   }
 
-  whichAnswer(): string{//method for checking the right answer   ***DOESN'T WORK YET***
-    if(this.image.name === this.word1){
-      return this.word1;
-    } else if (this.image.name === this.word2){
-      return this.word2;
-    } else if (this.image.name === this.word3){
-      return this.word3;
+  whichAnswer(pressedButton: any): boolean{//method for checking the right answer   ***DOESN'T WORK YET***
+    if(this.word1.id && this.buttonID === '1'){
+      if(this.word1.name === this.image.name)
+        return true;
+    } else if (this.word2.id && this.buttonID === '2'){
+      if(this.word2.name === this.image.name)
+        return true;
+    } else if (this.word3.id && this.buttonID === '3'){
+      if(this.word3.name === this.image.name)
+        return true;
     } else {
-      console.log("LA RESPUESTA NO ESTA ENTER LAS CORRECTAS");
-      return "ERROR, La respuesta no esta entre las opciones";
+      console.log("LA RESPUESTA NO ESTA ENTRE LAS CORRECTAS");
+      return false;
     }
+    return false;
   }
 }

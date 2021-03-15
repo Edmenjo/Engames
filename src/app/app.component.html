@@ -4,7 +4,27 @@
       <a class="nav-item nav-link" routerLink="/game1">The Grid</a>
       <a class="nav-item nav-link" routerLink="/game2">Choose it!</a>
       <a class="nav-item nav-link" routerLink="/game3">Lateral Buttons</a>
+      <span class="material-icons">
+        account_circle
+        </span>
   </div>
 </nav>
+
+<app-side-nav
+  [sidenavTemplateRef]="navContent"
+  [direction]="'left'"
+  [navWidth]="280"
+  [duration]="0.5"></app-side-nav>
+
+<div class="main-container">
+  <app-header></app-header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
+<ng-template #navContent>
+
+</ng-template>
 
 <router-outlet></router-outlet>

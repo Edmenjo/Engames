@@ -70,79 +70,17 @@
     }
   }
 
-  .squareForCategory {
-    position: absolute;
-    height: 200px;
-    width: 200px;
 
-
-    .bigButtonLeft {
-      transition: all .5s linear 0;
-      bottom: 10px;
-      left: 50px;
-      height: 350px;
-      width: 350px;
-      .bigButtonLeft:active{
-       &.right-answer {
-          background: rgb(83,163,83);
-        }
-        &.wrong-answer {
-          background: rgb(230,109,109);
-        }
-        &.backAtIT {
-          background: #69F0AE;
-        }
-      }
-    }
-  }
-
-  .squareForCategory2 {
-    position: absolute;
-    height: 500px;
-    width: 500px;
-    left: 500px;
-
-    .bigButtonRight {
-      bottom: 10px;
-      right: 50px;
-      height: 350px;
-      width: 350px;
-      &.right-answer {
-        background: rgb(83,163,83);
-      }
-      &.wrong-answer {
-        background: rgb(230,109,109);
-      }
-      &.backAtIT {
-        background: #69F0AE;
-      }
-    }
-  }
-
-  .imgAndWord {
-    margin: auto;
-    height: 200px;
-    width: 100px;
-    top: 0px;
-  }
 
   .reorderBox {
     height: 800px;
     width: 1000px;
   }
 
-  .firstGame {
-    text-align: center;
-
-    border-radius: 7%;
-    height: 80px;
-    width: 200px;
-    background-image: url('../../assets/images/buffet.png');
-    transition: 0.5s;
-  }
-
-  .firstGame:hover {
-    height: 90px;
-    width: 220px;
+  .continuePannel {
+    position: absolute;
+    bottom: 20px;
+    height: 250px;
+    width: 350px;
   }
 }

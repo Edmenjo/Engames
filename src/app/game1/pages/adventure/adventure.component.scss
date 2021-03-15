@@ -1,0 +1,63 @@
+
+  .adventureHorizontalDisplay {
+    width: 1000px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+
+  .adventureDisplay {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .firstGame {
+    text-align: center;
+
+    border-radius: 7%;
+    height: 80px;
+    width: 200px;
+    background-image: url('../../../../assets/images/buffet.png');
+    transition: 0.5s;
+  }
+
+  .firstGame:hover {
+    height: 90px;
+    width: 220px;
+  }
+
+  .secondGame {
+    text-align: center;
+
+    border-radius: 7%;
+    height: 80px;
+    width: 200px;
+    background-image: url('../../../../assets/images/agriculture.jpg');
+    transition: 0.5s;
+  }
+
+  .secondGame:hover {
+    height: 90px;
+    width: 220px;
+  }
+
+
+
+
+  .dialog {
+    color: black;
+    text-align: center;
+    border-radius: 7%;
+    height: 110px;
+    width: 200px;
+    background-color: gray;
+
+    align-self: flex-start;
+  }
+
+  .dialog:hover {
+    text-decoration: none;
+  }

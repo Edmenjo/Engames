@@ -14,9 +14,10 @@ import {MatButtonModule} from '@angular/material/button';
 import { Page2Component } from './game1/page2/page2.component';
 import { Game1logic } from './game1logic';
 
-import { Page3Component } from './game1/pages/page3/page3.component';
 import { AdventureComponent } from './game1/pages/adventure/adventure.component';
-import { SideBarComponent } from './game1/pages/side-bar/side-bar/side-bar.component';
+import { SideNavComponent } from './game1/pages/side-nav/side-nav.component';
+import { SideNavContentComponent } from './game1/pages/side-nav-content/side-nav-content.component';
+import { LateralButtonsComponent } from './game1/pages/lateral-buttons/lateral-buttons.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { SideBarComponent } from './game1/pages/side-bar/side-bar/side-bar.compo
     MenuComponent,
     Game1Component,
     Page2Component,
-    Page3Component,
     AdventureComponent,
-    SideBarComponent,
+    SideNavComponent,
+    SideNavContentComponent,
+    LateralButtonsComponent,
   ],
   imports: [
     BrowserModule,
