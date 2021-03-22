@@ -1,4 +1,5 @@
 .wordSquare {
+  margin: 10px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -15,4 +16,10 @@
   &.backAtIT {
     background: #ffffff;
   }
+}
+
+.gameboard {
+  display: flex;
+  justify-content: space-around;
+
 }

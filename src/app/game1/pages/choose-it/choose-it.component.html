@@ -10,17 +10,14 @@
 
   <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
 
-      <p>{{image.name}}</p>
       <div id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
 
-    </div>
-
-    <div>
-      <div id="1" class="wordSquare" (click)="clickSubfield($event)">{{word1.name}}</div>
-      <div id="2" class="wordSquare" (click)="clickSubfield($event)">{{word2.name}}</div>
-      <div id="3" class="wordSquare" (click)="clickSubfield($event)">{{word3.name}}</div>
-    </div>
-
+      </div>
+      <div>
+        <div id="1" class="wordSquare" (click)="clickSubfield($event)">{{word1.name}}</div>
+        <div id="2" class="wordSquare" (click)="clickSubfield($event)">{{word2.name}}</div>
+        <div id="3" class="wordSquare" (click)="clickSubfield($event)">{{word3.name}}</div>
+      </div>
 
   </div>
 
