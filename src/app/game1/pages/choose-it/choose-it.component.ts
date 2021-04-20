@@ -57,9 +57,6 @@ export class ChooseItComponent {
     if(this.game.gameStatus === 1) {
       this.buttonID = pressedButton.getAttribute('id');
 
-
-      console.log(this.whichAnswer(pressedButton),this.image.name);
-
       if(this.whichAnswer(pressedButton)){//checking the right answer
         pressedButton.classList.add('right-answer');
         setTimeout(()=>{
@@ -75,6 +72,7 @@ export class ChooseItComponent {
 
       if(this.flag === 5){//for showing next diffculty
         this.game.nextDificulty = true;
+        localStorage.setItem('game2', 'finished');
       }
 
       //moving to next image and words

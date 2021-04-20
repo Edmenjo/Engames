@@ -2,24 +2,23 @@
   position: absolute;
   height: 300px;
   width: 300px;
-
+  top: 350px;
 
   .bigButtonLeft {
     top: 10px;
     left: 50px;
     height: 250px;
     width: 250px;
-    .bigButtonLeft{
-     &.right-answer {
-        background: rgb(83,163,83);
-      }
-      &.wrong-answer {
-        background: rgb(230,109,109);
-      }
-      &.backAtIT {
-        background: #69F0AE;
-      }
+    &.right-answer {
+      background: rgb(83,163,83);
     }
+    &.wrong-answer {
+      background: rgb(230,109,109);
+    }
+    &.backAtIT {
+      background: #69F0AE;
+    }
+
   }
 }
 
@@ -28,6 +27,7 @@
   height: 300px;
   width: 300px;
   right: 100px;
+  top: 350px;
 
   .bigButtonRight {
     transition: all .5s linear 0;
@@ -52,4 +52,22 @@
   height: 100px;
   width: 100px;
   top: 0px;
+}
+
+.continuePannelLB {
+  bottom: 200px;
+  left: auto;
+  height: 250px;
+  width: 350px;
+}
+
+.continueContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+}
+
+.backToMenu {
+  margin: 50px;
 }

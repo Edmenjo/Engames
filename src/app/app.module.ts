@@ -18,6 +18,15 @@ import { SideNavComponent } from './game1/pages/side-nav/side-nav.component';
 import { SideNavContentComponent } from './game1/pages/side-nav-content/side-nav-content.component';
 import { LateralButtonsComponent } from './game1/pages/lateral-buttons/lateral-buttons.component';
 import { ChooseItComponent } from './game1/pages/choose-it/choose-it.component';
+import { ProfileComponent } from './game1/pages/profile/profile.component';
+
+import { MatCardModule } from '@angular/material/card';
+
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+
 
 @NgModule({
   declarations: [
@@ -29,6 +38,8 @@ import { ChooseItComponent } from './game1/pages/choose-it/choose-it.component';
     SideNavContentComponent,
     LateralButtonsComponent,
     ChooseItComponent,
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +47,19 @@ import { ChooseItComponent } from './game1/pages/choose-it/choose-it.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatButtonModule
+
+    HttpClientModule,
+      // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+      // and returns simulated server responses.
+      // Remove it when a real server is ready to receive requests.
+      HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+      ),
+
+
+    MatButtonModule,
+    MatCardModule,
+
   ],
   providers: [Game1logic],
   bootstrap: [AppComponent]

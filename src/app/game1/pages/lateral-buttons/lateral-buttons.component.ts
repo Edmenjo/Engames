@@ -47,15 +47,14 @@ export class LateralButtonsComponent {
   lateralButtons(lateralButton: any): void {
     const information2 = document.querySelector('.current-status');
     const pressedButton = lateralButton.currentTarget;
-    console.log(pressedButton.classList);
 
     if(pressedButton.getAttribute('id') === 'left' && this.leftValue === lateralGame[this.lateralButtonsFlag].trueOne){
-      pressedButton.classList.add('right-answer');
+      (<HTMLButtonElement>pressedButton).classList.add('right-answer');
       setTimeout(()=>{
         pressedButton.classList.remove('right-answer');
       },700)
     } else if(pressedButton.getAttribute('id') === 'right' && this.rightValue === lateralGame[this.lateralButtonsFlag].trueOne){
-      pressedButton.classList.add('right-answer');
+      (<HTMLButtonElement>pressedButton).classList.add('right-answer');
       setTimeout(()=>{
         pressedButton.classList.remove('right-answer');
       },700)
@@ -82,7 +81,7 @@ export class LateralButtonsComponent {
       this.game.hasAnImage = false;
     }
     this.flag++;
-    if(this.flag === 3){//for showing next diffculty
+    if(this.flag === 6){//for showing next diffculty
       this.game.nextDificulty = true;
     }
   }

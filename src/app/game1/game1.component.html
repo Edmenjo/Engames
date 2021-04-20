@@ -9,11 +9,10 @@
 
 
 
-  <div *ngIf="this.game.gameStatus === 1 " class="gameboard">
+  <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
 
-    <div class="justify-content-center">
-      <h2>{{image.name}}</h2>
-    </div>
+      <h2 style="color:white">{{image.name}}</h2>
+
 
     <div class="players right-answers align-self-center">
       <p class="mat-body-1" style="font-weight: 700; margin: 0 0 10px 0;">Correct answers: {{this.game.correctAnswers}}</p>
@@ -36,8 +35,9 @@
 
     <div *ngIf="this.game.nextDificulty === true" class="show-this">
       <p>This is for showing a button to go for next dificulty</p>
-      <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to adventure</button>
-      <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>
+      <br>
+      <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to the adventure map</button>
+      <!--  <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>  -->
     </div>
 
 

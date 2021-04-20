@@ -8,7 +8,6 @@
 
   .side-nav-bar-overlay {
       background: rgba(0,0,0,0.5);
-      width: 100px;
       height: 100%;
   }
 
@@ -19,17 +18,24 @@
       background: #FFF;
       display: flex;
       flex-direction: column;
+      background-image: url('../../../../assets/images/smallUniverse.png');
 
       .side-nav-bar-close {
           display: inline-block;
           font-size: 2.5em;
           margin: 24px 0px 0px 24px;
           cursor: pointer;
+          background-image: url('../../../../assets/images/smallUniverse.png');
       }
   }
 
   .side-nav-bar-content-container {
       padding: 32px;
+
+      height: 100%;
+
+      //background-image: linear-gradient(gray 30%,black);
+      background-image: url('../../../../assets/images/smallUniverse.png');
   }
 }
 

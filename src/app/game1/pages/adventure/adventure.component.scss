@@ -2,6 +2,25 @@
 width: 200px;
 }
 
+.p {
+  text-align: center;
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-events {
+  width: 300px;
+  height: 200px;
+  overflow: auto;
+  border: 1px solid #555;
+}
+
 .adventureHorizontalDisplay {
   width: 100%;
   display: flex;
@@ -18,19 +37,21 @@ width: 200px;
 }
 
 .dialogDisplay {
+  padding: 50px;
   height: 400px;
-  position: absolute;
-  right: 20px;
-  top: 60px;
+  bottom: 30px;
 }
 
 .firstGame {
+  padding: 50px;
+  color: white;
   text-align: center;
-
+  margin: auto;
   border-radius: 7%;
   height: 80px;
-  width: 200px;
-  background-image: url('../../../../assets/images/buffet.png');
+  width: 150px;
+  background-image: url('../../../../assets/images/finalShip.png');
+  background-repeat: no-repeat;
   transition: 0.5s;
 }
 
@@ -40,12 +61,14 @@ width: 200px;
 }
 
 .secondGame {
+  padding: 50px;
   text-align: center;
-
+  color: white;
   border-radius: 7%;
   height: 80px;
-  width: 200px;
-  background-image: url('../../../../assets/images/agriculture.jpg');
+  width: 150px;
+  background-image: url('../../../../assets/images/finalShip.png');
+  background-repeat: no-repeat;
   transition: 0.5s;
 }
 

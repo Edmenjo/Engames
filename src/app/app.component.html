@@ -4,16 +4,13 @@
       <a class="nav-item nav-link" routerLink="/game1">The Grid</a>
       <a class="nav-item nav-link" routerLink="/game2">Choose it!</a>
       <a class="nav-item nav-link" routerLink="/game3">Lateral Buttons</a>
-      <span class="material-icons">
-        account_circle
-        </span>
   </div>
 </nav>
 
 <app-side-nav
   [sidenavTemplateRef]="navContent"
   [direction]="'left'"
-  [navWidth]="280"
+  [navWidth]="330"
   [duration]="0.5"></app-side-nav>
 
 <div class="main-container">
@@ -24,7 +21,24 @@
 </div>
 
 <ng-template #navContent>
+  <div class="sideContent">
+    <div class="profile">
+      <span class="material-icons" (click)="toggleSideNav()" routerLink="/profile">account_circle</span>
+    </div>
 
+
+    <div class="bottom">
+      <div class="field d-flex justify-content-center" style="width: 100%;">
+        <a class="firstGame" (click)="toggleSideNav()" routerLink="/adventure">GO TO ADVENTURE</a>
+      </div>
+
+    <br>
+
+      <div class="configuration">
+        <button (click)="clearLocalStorage()"class="material-icons">build_circle</button>
+      </div>
+    </div>
+  </div>
 </ng-template>
 
 <router-outlet></router-outlet>

@@ -1,7 +1,7 @@
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Status } from './game1status';
 import { InsideContent } from './game1content';
-import { Images } from './images'
+import { Images } from './images';
 
 export class Game2logic {
 

@@ -4,6 +4,10 @@
 
 html, body { height: 100%; }
 body {
+
+  //background-color: #37474f;
+  background-image: url('./assets/images/universe.png');
+  color: white;
   padding: 0;
   margin: 0;
   position:
@@ -24,3 +28,13 @@ body {
 }
 
 
+.show-this {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

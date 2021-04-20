@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'engames';
 
+  constructor(private navService: NavigationService) {
+    localStorage.setItem('dialog', '0');
+   }
 
+  toggleSideNav() {
+    this.navService.setShowNav(false);
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+  }
 }

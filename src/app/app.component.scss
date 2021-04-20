@@ -1,0 +1,25 @@
+.sideContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bottom {
+  justify-content: flex-end;
+}
+
+.profile {
+  min-height: 300px;
+  flex-grow: 1;
+}
+
+.firstGame {
+  text-align: center;
+
+  border-radius: 7%;
+  height: 80px;
+  width: 200px;
+  background-image: url('../assets/images/wood.jpg');
+  transition: 0.5s;
+}

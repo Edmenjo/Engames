@@ -6,29 +6,23 @@ import { Images } from './images'
 export class Game1logic {
 
   //var to check if game 1 is completed
-  gameOneCompleted: boolean = true;
+  game1Finished: boolean = false;
+  game2Finished: boolean = false;
 
   //vars to advance in adventureText.json
   text1: boolean = true;
   text2: boolean = false;
   text3: boolean = false;
 
-
-
   gameField: Array<number> = [];
 
-  currentTurn: number = 1;
-
   gameStatus: Status;
-
   gameContent: InsideContent;
 
   correctAnswers: number = 0;
-
   wrongAnswers: number = 0;
 
   nextDificulty: boolean = false;
-
   flag: number = 1; //to show a button for next difficulty
 
   rest: number = 0;

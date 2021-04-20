@@ -1,40 +1,32 @@
+
+
 <div class="main-container">
-  <h1 style="font-weight: 900; text-align: center; margin: 15px 0;">YOUR ADVENTURE MAP</h1>
+  <h1 style="font-weight: 750; text-align: center; margin: 10px 0;">YOUR ADVENTURE MAP</h1>
   <div class="field">
   </div>
-<div style="max-width: 200px;">
-  <app-side-nav
-  [sidenavTemplateRef]="navContent"
-  [direction]="'left'"
-  [navWidth]="280"
-  [duration]="0.5"></app-side-nav>
-  <h1>TUCULITO.MP3</h1>
 
-  <app-side-nav></app-side-nav>
-  <section>
-  </section>
-
-<ng-template #navContent>
-  <h1>JEJEJEJEJEJ</h1>
-</ng-template>
-</div>
-  <div class="adventureHorizontalDisplay">
+  <div class="adventureHorizontalDisplay" style="margin: 15px;">
     <div class="adventureDisplay">
       <div class="field d-flex justify-content-center" style="width: 100%;">
-        <a class="firstGame" routerLink="/game1">THE GRID</a>
+        <a class="firstGame" routerLink="/game1"><p>THE GRID</p></a>
       </div>
-      <div *ngIf="this.game.gameOneCompleted === true" class="field d-flex justify-content-center" style="width: 100%;">
+      <div *ngIf="this.game1Finished === 'finished'" class="field d-flex justify-content-center" style="width: 100%;">
         <a class="secondGame" routerLink="/game2">CHOOSE IT!</a>
       </div>
-    </div>
+      <div *ngIf="this.game2Finished === 'finished'" class="field d-flex justify-content-center" style="width: 100%;">
+        <a class="secondGame" routerLink="/game3">LATERAL BUTTONS</a>
+      </div>
 
-    <div class="dialogDisplay">
-      <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
-        <a class="dialog" (click)="dialogMove($event)" id="1">{{adventureTextVar[0].text}}</a>
+      <div class="dialogDisplay">
+
+        <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
+          <a class="dialog" (click)="dialogMove($event)" id="1">{{adventureTextVar[this.adding].text}}</a>
+        </div>
+        <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
+          <a class="dialog" (click)="dialogMove($event)" id="2">{{adventureTextVar[this.adding].text}}</a>
+        </div>
       </div>
-      <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
-        <a class="dialog" (click)="dialogMove($event)" id="2">{{adventureTextVar[1].text}}</a>
-      </div>
+
     </div>
 
   </div>

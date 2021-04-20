@@ -27,27 +27,37 @@
 {
   "id": 4,
   "name": "Wood",
-  "left": "Roof",
-  "right": "Wood",
+  "left": "Wood",
+  "right": "Good",
   "trueOne": "Wood",
   "src": "assets/images/wood.jpg",
   "image": "true"
 },
 {
   "id": 5,
-  "name": "Donut",
-  "left": "Roof",
-  "right": "Wood",
-  "trueOne": "Fruit",
-  "image": "false"
+  "name": "Deer",
+  "left": "Dear",
+  "right": "Deer",
+  "trueOne": "Deer",
+  "src": "assets/images/deer.jpg",
+  "image": "true"
 },
 {
   "id": 6,
-  "name": "Roof",
-  "left": "Roof",
-  "right": "Wood",
-  "trueOne": "Fruit",
-  "src": "assets/images/wood.jpg",
+  "name": "Boulder",
+  "left": "Bolder",
+  "right": "Boulder",
+  "trueOne": "Boulder",
+  "src": "assets/images/boulder.jpg",
+  "image": "true"
+},
+{
+  "id": 7,
+  "name": "Boulder",
+  "left": "Bolder",
+  "right": "Boulder",
+  "trueOne": "Boulder",
+  "src": "assets/images/boulder.jpg",
   "image": "true"
 }
 ]

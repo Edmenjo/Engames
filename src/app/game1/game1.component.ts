@@ -9,7 +9,6 @@ import imagesData from './data/images.json';
 @Component({
   selector: 'app-game1',
   templateUrl: './game1.component.html',
-  //'./game1plus.component.html',
   styleUrls: ['./game1.component.scss'],
   providers: [Game1logic]
 })
@@ -58,28 +57,10 @@ export class Game1Component implements OnInit {
 
 
 
-      if(this.flag === 6){//for showing next diffculty
+      if(this.flag === 8){//for showing next diffculty
         this.game.nextDificulty = true;
+        localStorage.setItem('game1', 'finished');
       }
-
-
-
-
-      await this.game.checkGameEndWinner().then( (end: boolean) => {
-        if(this.game.gameStatus === 0 && end) {
-          if(information != null){
-            information.innerHTML = 'Winner is player ' + this.game.currentTurn;
-          }
-        }
-      });
-
-      await this.game.checkGameEndFull().then( (end: boolean) => {
-        if(this.game.gameStatus === 0 && end) {
-          if(information != null){
-            information.innerHTML = 'You had ' + this.game.correctAnswers + ' correct answers. This was just easy mode, get ready for the real game now.';
-          }
-        }
-      });
 
       if (this.game.gameStatus === 1 ){
 
