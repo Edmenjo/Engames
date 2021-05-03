@@ -5,6 +5,8 @@ import { LateralButtonsComponent } from './game1/pages/lateral-buttons/lateral-b
 import { AdventureComponent } from './game1/pages/adventure/adventure.component';
 import { ChooseItComponent } from './game1/pages/choose-it/choose-it.component';
 import { ProfileComponent } from './game1/pages/profile/profile.component';
+import { DbDataComponent } from './dbData.component';
+import { DbSearchComponent } from './db-search/db-search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'adventure', pathMatch: 'full' },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'game3', component: LateralButtonsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'game1plus', component: Game1Component },
+  { path: 'db', component: DbDataComponent },
+  { path: 'search', component: DbSearchComponent },
 
   // otherwise redirect to home
   //{ path: '**', redirectTo: '/secondpage' }

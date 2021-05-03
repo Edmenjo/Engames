@@ -5,6 +5,9 @@ import imagesData from './data/images.json';
 import adventureText from '../../data/adventureText.json';
 import { SideNavDirection } from '../side-nav/side-nav-direction';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { db } from '../../../db';
+import { Observable } from 'rxjs/internal/Observable';
+import { DbService } from "../../../db.service";
 
 
 @Component({
@@ -14,6 +17,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   providers: [Game1logic]
 })
 export class AdventureComponent implements OnInit {
+  db: db[];
+
   showFiller = false;
 
   game1Finished: any;//local storage vars
@@ -26,12 +31,14 @@ export class AdventureComponent implements OnInit {
 
   sideNavDirect: SideNavDirection;
 
-  constructor(public game: Game1logic) { }
+  constructor(public game: Game1logic, private DbService: DbService) { }
 
   ngOnInit(): void {
     this.game1Finished = localStorage.getItem('game1');
     this.game2Finished = localStorage.getItem('game2');
     this.counter = localStorage.getItem('dialog');
+    this.DbService.getDB().
+    subscribe(result => this.db = result);
   }
 
   goToGame(): void{

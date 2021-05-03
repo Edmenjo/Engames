@@ -8,25 +8,25 @@ import { db } from './db';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const db = [
-      { id: 11, name: 'Dr Nice' },
-      { id: 12, name: 'Narco' },
-      { id: 13, name: 'Bombasto' },
-      { id: 14, name: 'Celeritas' },
-      { id: 15, name: 'Magneta' },
-      { id: 16, name: 'RubberMan' },
-      { id: 17, name: 'Dynama' },
-      { id: 18, name: 'Dr IQ' },
-      { id: 19, name: 'Magma' },
-      { id: 20, name: 'Tornado' }
+      { id: 11, dialog: "Welcome adventurer! I am... ¿Ready for some adventure?" },
+      { id: 12, dialog: 'Queen Dagmar' },
+      { id: 13, dialog: 'Bombasto' },
+      { id: 14, dialog: 'Celeritas' },
+      { id: 15, dialog: 'Magneta' },
+      { id: 16, dialog: 'RubberMan' },
+      { id: 17, dialog: 'Dynama' },
+      { id: 18, dialog: 'Dr IQ' },
+      { id: 19, dialog: 'Magma' },
+      { id: 20, dialog: 'Tornado' }
     ];
     return {db};
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
+  // Overrides the genId method to ensure that a db always has an id.
+  // If the dbs array is empty,
   // the method below returns the initial number (11).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
+  // if the dbs array is not empty, the method below returns the highest
+  // db id + 1.
   genId(DB: db[]): number {
     return DB.length > 0 ? Math.max(...DB.map(DB => DB.id)) + 1 : 11;
   }

@@ -1,0 +1,35 @@
+<button (click)="save()">save</button>
+
+<div>
+  <label id="new-db">DB name: </label>
+  <input for="new-db" #dbName />
+
+  <!-- (click) passes input value to add() and then clears the input
+  <button class="add-button" (click)="add(dbName.value); dbName.value=''">
+    Add db
+  </button>
+</div>
+
+<button class="delete" title="delete db"
+  (click)="delete(this.db)">x</button>-->
+
+  <ul class="dbs">
+    <li *ngFor="let dialog of db">
+      <a routerLink="/detail/{{dialog.id}}">
+        <span class="badge">{{dialog.id}}</span> {{dialog.dialog}}
+      </a>
+      <button class="delete" title="delete db"
+        (click)="delete(dialog)">x</button>
+    </li>
+  </ul>
+
+
+<h2>Top Heroes</h2>
+<div class="heroes-menu">
+  <a *ngFor="let dialog of db"
+      routerLink="/detail/{{dialog.id}}">
+      {{dialog.dialog}}
+  </a>
+</div>
+
+<app-db-search></app-db-search>

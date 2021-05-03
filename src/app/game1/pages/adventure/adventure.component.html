@@ -1,5 +1,3 @@
-
-
 <div class="main-container">
   <h1 style="font-weight: 750; text-align: center; margin: 10px 0;">YOUR ADVENTURE MAP</h1>
   <div class="field">
@@ -20,7 +18,7 @@
       <div class="dialogDisplay">
 
         <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
-          <a class="dialog" (click)="dialogMove($event)" id="1">{{adventureTextVar[this.adding].text}}</a>
+          <a class="dialog" (click)="dialogMove($event)" id="1">{{db[0].dialog}}</a>
         </div>
         <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
           <a class="dialog" (click)="dialogMove($event)" id="2">{{adventureTextVar[this.adding].text}}</a>
