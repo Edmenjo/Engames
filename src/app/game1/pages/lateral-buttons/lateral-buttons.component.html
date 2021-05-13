@@ -5,13 +5,18 @@
 
   <div *ngIf="this.game.nextDificulty === false">
 
-    <div class="imgAndWord" *ngIf="this.game.hasAnImage === true">
-      <img src={{src}} width="150" height="150"/>
+    <div class="centeringIMG">
+      <div class="imgAndWord" *ngIf="this.game.hasAnImage === true">
+        <img src={{src}} width="150" height="150"/>
+      </div>
+      <div class="imgAndWord" *ngIf="this.game.hasAnImage === false">
+        <h2>{{realName}}</h2>
+      </div>
     </div>
-    <div class="imgAndWord" *ngIf="this.game.hasAnImage === false">
-      <h2>{{realName}}</h2>
-    </div>
-      <div>
+    <br>
+    <br>
+    <br>
+      <div class="buttons">
         <div class="squareForCategory">
           <button (click)="lateralButtons($event)" mat-raised-button color="accent" id="left" class="bigButtonLeft">{{leftValue}}</button>
         </div>
@@ -22,14 +27,12 @@
 
   </div>
 
-  <div class="continueContainer">
-    <div *ngIf="this.game.nextDificulty === true" class="continuePannelLB">
-      <p>This is for showing a button to go for next dificulty</p>
-      <br>
-      <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="backToMenu">Back to adventure</button>
-      <!--  <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>  -->
-    </div>
+  <div *ngIf="this.game.nextDificulty === true" class="show-this">
+    <p>This is for showing a button to go for next dificulty</p>
+    <br>
+    <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to adventure</button>
   </div>
+
 
 </div>
 

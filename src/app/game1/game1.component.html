@@ -11,7 +11,7 @@
 
   <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
 
-      <h2 style="color:white">{{image.name}}</h2>
+      <h2 style="color:white; margin: auto">{{image.name}}</h2>
 
 
     <div class="players right-answers align-self-center">
@@ -37,7 +37,6 @@
       <p>This is for showing a button to go for next dificulty</p>
       <br>
       <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to the adventure map</button>
-      <!--  <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>  -->
     </div>
 
 

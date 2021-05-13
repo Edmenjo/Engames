@@ -36,16 +36,10 @@ export class Game1Component implements OnInit {
 
   }
 
-  playHardMode(){
-    this.accessHardMode = true;
-  }
-
   async clickSubfield (subfield: any): Promise<void> {
     if(this.game.gameStatus === 1) {
       const pictureName = subfield.currentTarget.getAttribute('id');
-
       const information = document.querySelector('.current-status');
-
 
       if(this.image.name === pictureName){//si coincide el nombre con el del campo clickado
         subfield.currentTarget.classList.add('right-answer');
@@ -56,29 +50,22 @@ export class Game1Component implements OnInit {
       }
 
 
-
       if(this.flag === 8){//for showing next diffculty
         this.game.nextDificulty = true;
         localStorage.setItem('game1', 'finished');
+        this.game.showDialog = true;
+        this.game.text1 = false;
       }
 
-      if (this.game.gameStatus === 1 ){
-
         this.flag++;//for next difficulty
-
-
         this.whatImage++;//+1 to the index
-
 
         if(this.whatImage > 8){//if its over the possible index
           this.whatImage -= 9;//-9 to start over
         }
 
-
         this.image = imagesData[this.whatImage];
-      }
     }
-
 
   }
 

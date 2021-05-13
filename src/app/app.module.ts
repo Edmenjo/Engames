@@ -25,8 +25,6 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
-import { DbDataComponent } from '../app/dbData.component';
-import { DbSearchComponent } from './db-search/db-search.component';
 
 
 
@@ -41,8 +39,6 @@ import { DbSearchComponent } from './db-search/db-search.component';
     LateralButtonsComponent,
     ChooseItComponent,
     ProfileComponent,
-    DbDataComponent,
-    DbSearchComponent,
 
   ],
   imports: [

@@ -8,16 +8,11 @@ import { db } from './db';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const db = [
-      { id: 11, dialog: "Welcome adventurer! I am... ¿Ready for some adventure?" },
-      { id: 12, dialog: 'Queen Dagmar' },
-      { id: 13, dialog: 'Bombasto' },
-      { id: 14, dialog: 'Celeritas' },
-      { id: 15, dialog: 'Magneta' },
-      { id: 16, dialog: 'RubberMan' },
-      { id: 17, dialog: 'Dynama' },
-      { id: 18, dialog: 'Dr IQ' },
-      { id: 19, dialog: 'Magma' },
-      { id: 20, dialog: 'Tornado' }
+      { id: 1, dialog: "Welcome adventurer! I am... ¿Ready for some adventure?" },
+      { id: 2, dialog: "You have completed THE GRID. Now go for Choose it!" },
+      { id: 3, dialog: "I have to admit you are doing great! Go on." },
+      { id: 4, dialog: 'Celeritas' },
+      { id: 5, dialog: 'Magneta' },
     ];
     return {db};
   }

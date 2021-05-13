@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Game2logic } from 'src/app/game2logic';
+import { Game1logic } from 'src/app/game1logic';
 import { Status } from 'src/app/game1status';
 import imagesData from '../../data/images.json';
 import wordsToChoose from '../../data/words.json';
-import lateralGame from '../../data/lateralButtons.json';
 
 @Component({
   selector: 'app-game1',
   templateUrl: './choose-it.component.html',
   styleUrls: ['./choose-it.component.scss'],
-  providers: [Game2logic]
+  providers: [Game1logic]
 })
 
 export class ChooseItComponent {
@@ -29,13 +28,12 @@ export class ChooseItComponent {
 
   buttonID: any;
 
-  constructor(public game: Game2logic) { }
+  constructor(public game: Game1logic) { }
 
 
   startGame(): void{
     this.game.gameStatus = Status.START;
     this.game.gameStart();
-    console.log(this.game.correctOrder);
     this.image = imagesData[this.whatImage];
     this.imageForButton = imagesData[this.whatImageForButton];
 
@@ -46,11 +44,6 @@ export class ChooseItComponent {
 
 
   }
-
-  playHardMode(){
-    this.accessHardMode = true;
-  }
-
 
   async clickSubfield (subfield: any): Promise<void> {
     const pressedButton = subfield.currentTarget;
@@ -73,6 +66,7 @@ export class ChooseItComponent {
       if(this.flag === 5){//for showing next diffculty
         this.game.nextDificulty = true;
         localStorage.setItem('game2', 'finished');
+        this.game.showDialog = true;
       }
 
       //moving to next image and words
@@ -87,8 +81,6 @@ export class ChooseItComponent {
       this.word3 = wordsToChoose[this.whatWoords+2];
 
     }
-
-
 
   }
 

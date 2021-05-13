@@ -9,8 +9,12 @@ export class Game1logic {
   game1Finished: boolean = false;
   game2Finished: boolean = false;
 
+  //for lateral buttons game
+  hasAnImage: boolean = true;
+
   //vars to advance in adventureText.json
-  text1: boolean = true;
+  showDialog: boolean = true;
+  text1: boolean = false;
   text2: boolean = false;
   text3: boolean = false;
 

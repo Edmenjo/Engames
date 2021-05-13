@@ -5,23 +5,26 @@
 
   <div class="adventureHorizontalDisplay" style="margin: 15px;">
     <div class="adventureDisplay">
-      <div class="field d-flex justify-content-center" style="width: 100%;">
-        <a class="firstGame" routerLink="/game1"><p>THE GRID</p></a>
+      <div class="field d-flex justify-content-center">
+        <a class="firstGame" routerLink="/game1"><p></p></a>
       </div>
-      <div *ngIf="this.game1Finished === 'finished'" class="field d-flex justify-content-center" style="width: 100%;">
-        <a class="secondGame" routerLink="/game2">CHOOSE IT!</a>
+      <div *ngIf="this.game1Finished === 'finished'" class="field d-flex justify-content-center">
+        <a class="secondGame" routerLink="/game2"></a>
       </div>
-      <div *ngIf="this.game2Finished === 'finished'" class="field d-flex justify-content-center" style="width: 100%;">
-        <a class="secondGame" routerLink="/game3">LATERAL BUTTONS</a>
+      <div *ngIf="this.game2Finished === 'finished'" class="field d-flex justify-content-center">
+        <a class="thirdGame" routerLink="/game3"></a>
       </div>
 
-      <div class="dialogDisplay">
+      <div *ngIf="this.game.showDialog === true" class="dialogDisplay">
 
         <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
           <a class="dialog" (click)="dialogMove($event)" id="1">{{db[0].dialog}}</a>
         </div>
         <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
-          <a class="dialog" (click)="dialogMove($event)" id="2">{{adventureTextVar[this.adding].text}}</a>
+          <a class="dialog" (click)="dialogMove($event)" id="2">{{db[1].dialog}}</a>
+        </div>
+        <div *ngIf="this.game.text3 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
+          <a class="dialog" (click)="dialogMove($event)" id="3">{{db[2].dialog}}</a>
         </div>
       </div>
 

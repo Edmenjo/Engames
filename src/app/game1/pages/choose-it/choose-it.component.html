@@ -10,7 +10,7 @@
 
   <div *ngIf="this.game.gameStatus === 1 && this.game.nextDificulty === false" class="gameboard">
 
-      <div id={{image.id}} class="subfield col-16"> <img src={{image.src}} width="98" height="94"/>
+      <div id={{image.id}} class="subfield col-16" style="position: relative; bottom: -15px;"> <img src={{image.src}} width="98" height="94"/>
       </div>
 
       <div>
@@ -25,7 +25,6 @@
     <p>This is for showing a button to go for next dificulty</p>
     <br>
     <button (click)="startGame()" routerLink="/adventure" mat-raised-button color="accent" class="start-game">Back to adventure</button>
-    <!--  <button (click)="playHardMode()" routerLink="/game2" mat-raised-button color="accent" class="start-game">Play hard mode</button>  -->
   </div>
 
 </div>

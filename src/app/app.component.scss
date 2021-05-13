@@ -15,11 +15,15 @@
 }
 
 .firstGame {
-  text-align: center;
-
-  border-radius: 7%;
-  height: 80px;
+  padding: 20px;
+  height: 151px;
   width: 200px;
-  background-image: url('../assets/images/wood.jpg');
+  background-image: url('../assets/images/finalShip.png');
+  background-repeat: no-repeat;
   transition: 0.5s;
+}
+
+.firstGame:hover {
+  height: 164px;
+  width: 220px;
 }

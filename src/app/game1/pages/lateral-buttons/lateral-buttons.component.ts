@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { Game2logic } from 'src/app/game2logic';
+import { Game1logic } from 'src/app/game1logic';
 import { Status } from 'src/app/game1status';
-import imagesData from '../../data/images.json';
-import wordsToChoose from '../../data/words.json';
 import lateralGame from '../../data/lateralButtons.json';
 
 @Component({
   selector: 'app-game1',
   templateUrl: './lateral-buttons.component.html',
   styleUrls: ['./lateral-buttons.component.scss'],
-  providers: [Game2logic]
+  providers: [Game1logic]
 })
 
 export class LateralButtonsComponent {
@@ -25,7 +23,7 @@ export class LateralButtonsComponent {
   hasImage: any;
 
 
-  constructor(public game: Game2logic) {
+  constructor(public game: Game1logic) {
 
     this.leftValue = lateralGame[this.lateralButtonsFlag].left;
     this.rightValue = lateralGame[this.lateralButtonsFlag].right;
@@ -38,10 +36,6 @@ export class LateralButtonsComponent {
   startGame(): void{
     this.game.gameStatus = Status.START;
     this.game.gameStart();
-  }
-
-  playHardMode(){
-    this.accessHardMode = true;
   }
 
   lateralButtons(lateralButton: any): void {
@@ -83,6 +77,8 @@ export class LateralButtonsComponent {
     this.flag++;
     if(this.flag === 6){//for showing next diffculty
       this.game.nextDificulty = true;
+      localStorage.setItem('game3', 'finished');
+      this.game.text3 = false;
     }
   }
 }
