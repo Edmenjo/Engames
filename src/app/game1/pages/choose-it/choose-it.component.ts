@@ -14,12 +14,9 @@ import wordsToChoose from '../../data/words.json';
 export class ChooseItComponent {
 
   flag: number = 0;
-  accessHardMode: boolean = false;
 
   image: any;
-  imageForButton: any;
   whatImage: number = 0;
-  whatImageForButton: number = 0;
 
   whatWoords: number = 0;
   word1: any;
@@ -35,7 +32,6 @@ export class ChooseItComponent {
     this.game.gameStatus = Status.START;
     this.game.gameStart();
     this.image = imagesData[this.whatImage];
-    this.imageForButton = imagesData[this.whatImageForButton];
 
     this.whatWoords = 0;
     this.word1 = wordsToChoose[this.whatWoords];
@@ -45,12 +41,13 @@ export class ChooseItComponent {
 
   }
 
-  async clickSubfield (subfield: any): Promise<void> {
+  clickSubfield (subfield: any): void {
     const pressedButton = subfield.currentTarget;
     if(this.game.gameStatus === 1) {
       this.buttonID = pressedButton.getAttribute('id');
 
-      if(this.whichAnswer(pressedButton)){//checking the right answer
+      //checking the right answer
+      if(this.whichAnswer(pressedButton)){
         pressedButton.classList.add('right-answer');
         setTimeout(()=>{
         pressedButton.classList.remove('right-answer');
@@ -84,7 +81,7 @@ export class ChooseItComponent {
 
   }
 
-  whichAnswer(pressedButton: any): boolean{//method for checking the right answer   ***DOESN'T WORK YET***
+  whichAnswer(pressedButton: any): boolean{//method for checking the right answer
     if(this.word1.id && this.buttonID === '1'){
       if(this.word1.name === this.image.name)
         return true;

@@ -13,7 +13,6 @@ import lateralGame from '../../data/lateralButtons.json';
 export class LateralButtonsComponent {
 
   flag: number = 0;
-  accessHardMode: boolean = false;
 
   lateralButtonsFlag: number = 0;//next answer in lateral bottons
   leftValue: any;
@@ -39,15 +38,16 @@ export class LateralButtonsComponent {
   }
 
   lateralButtons(lateralButton: any): void {
-    const information2 = document.querySelector('.current-status');
     const pressedButton = lateralButton.currentTarget;
 
-    if(pressedButton.getAttribute('id') === 'left' && this.leftValue === lateralGame[this.lateralButtonsFlag].trueOne){
+    if(pressedButton.getAttribute('id') === 'left' &&
+     this.leftValue === lateralGame[this.lateralButtonsFlag].trueOne){
       (<HTMLButtonElement>pressedButton).classList.add('right-answer');
       setTimeout(()=>{
         pressedButton.classList.remove('right-answer');
       },700)
-    } else if(pressedButton.getAttribute('id') === 'right' && this.rightValue === lateralGame[this.lateralButtonsFlag].trueOne){
+    } else if(pressedButton.getAttribute('id') === 'right' &&
+     this.rightValue === lateralGame[this.lateralButtonsFlag].trueOne){
       (<HTMLButtonElement>pressedButton).classList.add('right-answer');
       setTimeout(()=>{
         pressedButton.classList.remove('right-answer');

@@ -9,6 +9,7 @@ import { SideNavDirection } from './side-nav-direction';
   styleUrls: ['./side-nav.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class SideNavComponent implements OnInit {
 
   showSideNav: Observable<boolean>;

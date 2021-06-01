@@ -5,14 +5,14 @@ import { db } from './db';
 @Injectable({
   providedIn: 'root',
 })
+
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const db = [
       { id: 1, dialog: "Welcome adventurer! I am... ¿Ready for some adventure?" },
       { id: 2, dialog: "You have completed THE GRID. Now go for Choose it!" },
       { id: 3, dialog: "I have to admit you are doing great! Go on." },
-      { id: 4, dialog: 'Celeritas' },
-      { id: 5, dialog: 'Magneta' },
+      { id: 4, dialog: 'Wow! Just... kepp going!' },
     ];
     return {db};
   }

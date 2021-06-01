@@ -7,6 +7,7 @@ import { NavigationService } from 'src/app/services/navigation.service';
   styleUrls: ['./side-nav-content.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
+
 export class SideNavContentComponent implements OnInit {
 
   constructor(private navService: NavigationService) { }

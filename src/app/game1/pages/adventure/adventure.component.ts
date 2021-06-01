@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game1logic } from '../../../game1logic';
-import { Routes, RouterModule } from '@angular/router';
-import imagesData from './data/images.json';
-import adventureText from '../../data/adventureText.json';
-import { SideNavDirection } from '../side-nav/side-nav-direction';
-import {MatSidenavModule} from '@angular/material/sidenav';
 import { db } from '../../../db';
-import { Observable } from 'rxjs/internal/Observable';
 import { DbService } from "../../../db.service";
 
 
@@ -16,20 +10,16 @@ import { DbService } from "../../../db.service";
   styleUrls: ['./adventure.component.scss'],
   providers: [Game1logic]
 })
+
 export class AdventureComponent implements OnInit {
   db: db[];
 
-  showFiller = false;
-
   game1Finished: any;//local storage vars
   game2Finished: any;
+
   dialog: any;
   counter: any;
   adding = 0;
-
-  adventureTextVar: any = adventureText;
-
-  sideNavDirect: SideNavDirection;
 
   constructor(public game: Game1logic, private DbService: DbService) { }
 

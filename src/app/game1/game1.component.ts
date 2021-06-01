@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Game1logic } from '../game1logic';
-import { Routes, RouterModule } from '@angular/router';
-import { Images } from '../images';
-import { Status } from '../game1status';
 import imagesData from './data/images.json';
 
 
@@ -12,6 +9,7 @@ import imagesData from './data/images.json';
   styleUrls: ['./game1.component.scss'],
   providers: [Game1logic]
 })
+
 export class Game1Component implements OnInit {
 
   Images: any = imagesData;
@@ -20,7 +18,6 @@ export class Game1Component implements OnInit {
 
   //stage control variables
   flag: number = 0;
-  accessHardMode: boolean = false;
 
   constructor(public game: Game1logic) { }
 
@@ -36,10 +33,9 @@ export class Game1Component implements OnInit {
 
   }
 
-  async clickSubfield (subfield: any): Promise<void> {
+  clickSubfield (subfield: any): void {
     if(this.game.gameStatus === 1) {
       const pictureName = subfield.currentTarget.getAttribute('id');
-      const information = document.querySelector('.current-status');
 
       if(this.image.name === pictureName){//si coincide el nombre con el del campo clickado
         subfield.currentTarget.classList.add('right-answer');

@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class NavigationService implements OnInit {
 
   private showNav$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
