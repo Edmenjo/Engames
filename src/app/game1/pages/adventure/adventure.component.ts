@@ -8,7 +8,7 @@ import { DbService } from "../../../db.service";
   selector: 'app-game1',
   templateUrl: './adventure.component.html',
   styleUrls: ['./adventure.component.scss'],
-  providers: [Game1logic]
+  providers: [Game1logic, DbService]
 })
 
 export class AdventureComponent implements OnInit {
@@ -16,10 +16,6 @@ export class AdventureComponent implements OnInit {
 
   game1Finished: any;//local storage vars
   game2Finished: any;
-
-  dialog: any;
-  counter: any;
-  adding = 0;
 
   constructor(public game: Game1logic, private DbService: DbService) { }
 
@@ -38,24 +34,11 @@ export class AdventureComponent implements OnInit {
       this.game.text1 = true;
     }
 
-    this.counter = localStorage.getItem('dialog');
     this.DbService.getDB().
     subscribe(result => this.db = result);
   }
 
   dialogMove(nextDialog: any): void {
-    this.game.showDialog = false;
-    localStorage.removeItem('dialog');
-
-    this.dialog = localStorage.getItem('dialog');
-    const pressedButton = nextDialog.currentTarget.getAttribute('id');
-    if(pressedButton === "1"){
-      this.game.text1 = false;
-      this.game.text2 = true;
-    }
-    this.adding++;
-    this.dialog = ""+this.adding;
-
-    localStorage.setItem('dialog', this.dialog);
+    this.game.showDialog = false;//to show only 1 dialog, even when clicked
   }
 }

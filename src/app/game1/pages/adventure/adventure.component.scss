@@ -31,8 +31,7 @@
 }
 
 .firstGame:hover {
-  height: 164px;
-  width: 220px;
+  width: 250px;
 }
 
 .secondGame {
@@ -45,8 +44,7 @@
 }
 
 .secondGame:hover {
-  height: 164px;
-  width: 220px;
+  width: 250px;
 }
 
 .thirdGame {
@@ -59,8 +57,7 @@
 }
 
 .thirdGame:hover {
-  height: 164px;
-  width: 220px;
+  width: 250px;
 }
 
 .dialog {
@@ -68,8 +65,10 @@
   text-align: center;
   border-radius: 7%;
   height: 110px;
-  width: 200px;
+  width: 170px;
   background-color: gray;
+  position: relative;
+  left: -55px;
 }
 
 .dialog:hover {

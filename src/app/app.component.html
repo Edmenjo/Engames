@@ -25,19 +25,19 @@
 <ng-template #navContent>
   <div class="sideContent">
     <div class="profile">
-      <span class="material-icons" (click)="toggleSideNav()" routerLink="/profile">account_circle</span>
+      <img src="assets/images/spaceCadetFinal.png" (click)="toggleSideNav()" routerLink="/profile" width="265" height="300"/>
     </div>
 
 
     <div class="bottom">
       <div class="field d-flex justify-content-center" style="width: 100%;">
-        <a class="firstGame" (click)="toggleSideNav()" routerLink="/adventure">GO TO ADVENTURE</a>
+        <a class="firstGame" (click)="toggleSideNav()" routerLink="/adventure"></a>
       </div>
 
     <br>
 
       <div class="configuration">
-        <button (click)="clearLocalStorage()"class="material-icons">DELETE PROGRESS build_circle</button>
+        <button (click)="clearLocalStorage()" routerLink="/adventure" mat-raised-button color="warn" class="start-game">DELETE PROGRESS</button>
       </div>
     </div>
   </div>

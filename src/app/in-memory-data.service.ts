@@ -9,10 +9,10 @@ import { db } from './db';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const db = [
-      { id: 1, dialog: "Welcome adventurer! I am... ¿Ready for some adventure?" },
-      { id: 2, dialog: "You have completed THE GRID. Now go for Choose it!" },
+      { id: 1, dialog: "Welcome adventurer! I am Space George. ¿Ready for some adventure?" },
+      { id: 2, dialog: "You have completed THE GRID. Now use the new spaceship for playing Choose it!" },
       { id: 3, dialog: "I have to admit you are doing great! Go on." },
-      { id: 4, dialog: 'Wow! Just... kepp going!' },
+      { id: 4, dialog: 'Wow! Just... keep going!' },
     ];
     return {db};
   }

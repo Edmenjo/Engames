@@ -18,12 +18,15 @@
       <div *ngIf="this.game.showDialog === true" class="dialogDisplay">
 
         <div *ngIf="this.game.text1 === true" class="field d-flex" style="width: 100%;">
+          <img src="assets/images/spaceCadetFinal.png" (click)="dialogMove($event)" width="265" height="300"/>
           <a class="dialog" (click)="dialogMove($event)" id="1">{{db[0].dialog}}</a>
         </div>
         <div *ngIf="this.game.text2 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
+          <img src="assets/images/spaceCadetFinal.png" (click)="dialogMove($event)" width="265" height="300"/>
           <a class="dialog" (click)="dialogMove($event)" id="2">{{db[1].dialog}}</a>
         </div>
         <div *ngIf="this.game.text3 === true" class="field d-flex justify-content-flex-end" style="width: 100%;">
+          <img src="assets/images/spaceCadetFinal.png" (click)="dialogMove($event)" width="265" height="300"/>
           <a class="dialog" (click)="dialogMove($event)" id="3">{{db[2].dialog}}</a>
         </div>
       </div>
